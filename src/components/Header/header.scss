@@ -1,0 +1,9 @@
+/*IMPORTS*/
+@import "../../assets/scss_settings/mixins";
+
+header {
+  .navbar {
+    background-color: $black;
+    padding: 0 1rem 0.5rem 0;
+  }
+}
