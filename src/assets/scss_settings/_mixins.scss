@@ -1,4 +1,22 @@
-/*============================
-            COLORS
-==============================*/
-$black: #1d1d1d;
+@import "./variables";
+
+/*
+============================
+            MIXINS
+============================
+*/
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin vertical_line {
+  @include dimensions(1px, 20px);
+  background-color: $gray;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

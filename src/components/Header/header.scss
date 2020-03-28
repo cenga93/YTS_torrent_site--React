@@ -1,9 +1,59 @@
-/*IMPORTS*/
+/*
+============================
+          IMPORTS
+============================
+*/
 @import "../../assets/scss_settings/mixins";
+@import "../../assets/scss_settings/variables";
 
-header {
-  .navbar {
+body {
+  font-family: $font;
+  /*begin::header*/
+  header {
     background-color: $black;
-    padding: 0 1rem 0.5rem 0;
+    .navbar {
+      padding: 0.7rem;
+      .navbar-toggler {
+        border: none;
+      }
+      .navbar-nav {
+        @include flex;
+        .form-group,
+        .nav-link {
+          color: $gray;
+        }
+        .link_highlight {
+          color: $green;
+        }
+        .login_link,
+        .register_link {
+          color: #fff;
+        }
+        .vertical_line {
+          @include vertical_line;
+        }
+        .searchInput,
+        .nav-link {
+          padding-left: 0.8rem;
+          font-size: 0.85em;
+          font-weight: $font_weight;
+        }
+
+        .searchIcon {
+          position: relative;
+          left: 30px;
+        }
+        /* search input */
+        .searchInput {
+          @include dimensions(250px, 35px);
+          color: $gray;
+          border: 2px solid $gray_dark;
+          border-radius: 20px;
+          padding-left: 35px;
+          background: transparent;
+        }
+      }
+    }
   }
+  /*end::header*/
 }
