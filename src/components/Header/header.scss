@@ -5,7 +5,7 @@
 */
 @import "../../assets/scss_settings/mixins";
 @import "../../assets/scss_settings/variables";
-
+@import "./media_header";
 body {
   font-family: $font;
   /*begin::header*/
@@ -13,13 +13,30 @@ body {
     background-color: $black;
     .navbar {
       padding: 0.7rem;
-      .navbar-toggler {
-        border: none;
+
+      .moviesTitle,
+      .toggleDiv .userIcon {
+        color: $gray;
       }
+
+      .moviesTitle {
+        margin-left: 1rem;
+        font-size: 1.2em;
+      }
+      .toggleDiv,
       .navbar-nav {
         @include flex;
+      }
+      .toggleDiv {
+        .navbar-toggler {
+          border: none;
+        }
+      }
+
+      .navbar-nav {
         .form-group,
-        .nav-link {
+        .nav-link,
+        .searchInput {
           color: $gray;
         }
         .link_highlight {
@@ -38,15 +55,12 @@ body {
           font-size: 0.85em;
           font-weight: $font_weight;
         }
-
         .searchIcon {
           position: relative;
           left: 30px;
         }
-        /* search input */
         .searchInput {
           @include dimensions(250px, 35px);
-          color: $gray;
           border: 2px solid $gray_dark;
           border-radius: 20px;
           padding-left: 35px;
