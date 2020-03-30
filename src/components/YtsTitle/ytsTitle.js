@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./ytsTitle.scss";
@@ -22,7 +23,7 @@ const YtsTitle = () => {
           <FontAwesomeIcon icon={faStar} size="sm" className="starIcon" />
           Popular Downloads
           <Link to="/rss-guide" className="float-right">
-            <img src={rcc} />
+            <img src={rcc} alt="rcc" />
           </Link>
         </h5>
       </Container>

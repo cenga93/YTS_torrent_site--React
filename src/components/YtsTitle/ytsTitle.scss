@@ -3,10 +3,12 @@
 
 #ytsTitle {
   .container {
-    @include padding(3rem, 0rem);
+    padding: 3rem 0 0 0;
+    // @include padding(3rem, 0rem);
     text-align: center;
     color: #fff;
     h1,
+    h5,
     .blogLink {
       font-weight: $font_weight;
     }
@@ -23,6 +25,7 @@
       margin-top: 2rem;
       padding-bottom: 1.5rem;
       border-bottom: 1px solid #ffffff33;
+      font-size: 1.1em;
       .starIcon {
         margin-right: 0.5rem;
         color: $green;
