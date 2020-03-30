@@ -16,20 +16,19 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=2020`,
-      { method: "GET" }
-    )
+    fetch(`https://yts.mx/api/v2/list_movies.json?sort_by=like_count`, {
+      method: "GET"
+    })
       .then(data => data.json())
       .then(data => {
         // data
         // data.results.map(item => {
         // //   console.log(item);
         // });
-        // console.log(data);
-        this.setState({
-          movies: [...data.results]
-        });
+        console.log(data);
+        // this.setState({
+        //   movies: [...data.results]
+        // });
       });
   }
 
