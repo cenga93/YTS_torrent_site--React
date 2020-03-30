@@ -8,6 +8,7 @@
 @import "./media_header";
 body {
   font-family: $font;
+  position: relative;
   /*begin::header*/
   header {
     background-color: $black;

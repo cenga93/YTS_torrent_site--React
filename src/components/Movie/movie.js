@@ -1,11 +1,11 @@
 import React from "react";
-import { Card, CardDeck } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 const Movie = ({ movie }) => {
   return (
     <div className="col-lg-3 col-md-3 col-sm-6">
       <Card className="m-0">
-        <Card.Img variant="top" src="holder.js/100px160" /> 
+        <Card.Img variant="top" src="holder.js/100px160" />
         <Card.Body>
           <Card.Title>Card title</Card.Title>
           <Card.Text>

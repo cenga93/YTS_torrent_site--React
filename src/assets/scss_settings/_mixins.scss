@@ -10,6 +10,10 @@
   height: $height;
 }
 
+@mixin padding($p1, $p2) {
+  padding: $p1 $p2;
+}
+
 @mixin vertical_line {
   @include dimensions(1px, 20px);
   background-color: $gray;

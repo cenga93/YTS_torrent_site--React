@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import MoviesList from "../moviesList/moviesList";
-
+import background from "../../assets/img/background.jpg";
+import YtsTitle from "../YtsTitle/ytsTitle";
+import "./home.scss";
 const api_key = `d05acecc4cd9e0136681ec222f35815e`;
 
 class Home extends Component {
@@ -29,7 +31,15 @@ class Home extends Component {
   }
 
   render() {
-    return <MoviesList data={this.state.movies} />;
+    // return <MoviesList data={this.state.movies} />;
+    return (
+      <>
+        <div className="backgroundDiv"></div>
+        <React.Fragment>
+          <YtsTitle />
+        </React.Fragment>
+      </>
+    );
   }
 }
 
