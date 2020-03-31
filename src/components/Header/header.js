@@ -7,9 +7,6 @@ import logo from "../../assets/img/logo.svg";
 import "./header.scss";
 
 const Header = () => {
-  // handleChange = e => {
-  //   console.log(e.target.value);
-  // };
   return (
     <header>
       <Container className="header_container">
@@ -58,7 +55,6 @@ const Header = () => {
                     type="search"
                     placeholder="Quick search"
                     className="searchInput"
-                    // onChange={this.handleChange}
                   />
                 </Form.Group>
               </Form>

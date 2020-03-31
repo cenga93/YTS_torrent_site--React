@@ -1,48 +1,48 @@
 import React, { Component } from "react";
-// import MoviesList from "../moviesList/moviesList";
-import MostPopular from "../MostPopular/mostPopular";
 import YtsTitle from "../YtsTitle/ytsTitle";
-import "./home.scss";
-const api_key = `d05acecc4cd9e0136681ec222f35815e`;
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-
+  constructor() {
+    super();
     this.state = {
-      movies: []
+      movies: [],
+      mostPopular: []
     };
-    this.apiKey = process.env.REACT_APP_API;
   }
+  /*
+    API ENDPOINT PARAMETER: [sort_by]
+    *-----------------------
+    * -> sort_by = title
+    * -> sort_by = year
+    * -> sort_by = rating
+    * -> sort_by = peers
+    * -> sort_by = seeds
+    * -> sort_by = download_count
+    * -> sort_by = like_count
+    * -> sort_by = date_added
+    *-------------------------
+  */
 
   componentDidMount() {
-    fetch(`https://yts.mx/api/v2/list_movies.json?sort_by=like_count`, {
+    fetch(`https://yts.mx/api/v2/list_movies.json?sort_by=download_count`, {
       method: "GET"
     })
       .then(data => data.json())
-      .then(data => {
-        // data
-        // data.results.map(item => {
-        // //   console.log(item);
-        // });
-        console.log(data);
-        // this.setState({
-        //   movies: [...data.results]
-        // });
+      .then(({ data }) => {
+        let array = [];
+        for (let i = 0; i < 4; i++) {
+          array.push(data.movies[i]);
+        }
+
+        this.setState({
+          movies: [...data.movies],
+          mostPopular: [...array]
+        });
       });
   }
 
   render() {
-    // return <MoviesList data={this.state.movies} />;
-    return (
-      <>
-        <div className="backgroundDiv"></div>
-        <React.Fragment>
-          <YtsTitle />
-          <MostPopular popular={this.state.movies} />
-        </React.Fragment>
-      </>
-    );
+    return <YtsTitle popular={this.state.mostPopular} />;
   }
 }
 

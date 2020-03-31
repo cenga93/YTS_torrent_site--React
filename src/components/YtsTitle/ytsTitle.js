@@ -1,15 +1,24 @@
 import React from "react";
-
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./ytsTitle.scss";
-import rcc from "../../assets/img/rss-icon.webp";
+import Mostpular from "../MostPopular/mostPopular";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-const YtsTitle = () => {
+import rcc from "../../assets/img/rss-icon.webp";
+import "./ytsTitle.scss";
+import bg from "../../assets/img/background.jpg";
+
+const ytsTitle = ({ popular }) => {
   return (
-    <section id="ytsTitle" className="d-none d-md-block d-sm-none">
-      <Container>
+    // TITLE
+    <section
+      id="ytsTitle"
+      style={{
+        background: `linear-gradient(180deg, rgba(23,23,23,0.804359243697479) 0%, rgba(15,15,15,0.8099614845938375) 100%),url(${bg})no-repeat center/cover`
+      }}
+      className="d-none d-md-block d-sm-none"
+    >
+      <Container className="container_title">
         <h1>Download YTS YIFY movies: HD smallest size</h1>
         <p>
           Welcome to the official YTS.MX (.LT) website. Here you can browse and
@@ -27,8 +36,11 @@ const YtsTitle = () => {
           </Link>
         </h5>
       </Container>
+
+      {/* MOST POPULAR MOVIES */}
+      <Mostpular popular={popular} />
     </section>
   );
 };
 
-export default YtsTitle;
+export default ytsTitle;

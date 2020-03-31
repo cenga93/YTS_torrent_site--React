@@ -1,20 +1,15 @@
 import React from "react";
 import { Container, CardDeck } from "react-bootstrap";
-import Movie from "../Movie/movie";
-
+import Movies from "../Movie/movie";
 const mostPopular = ({ popular }) => {
-  let array, movie;
-
-  popular.sort((b, a) => a.popularity - b.popularity);
-  array = popular.splice(0, 4);
-
-  movie = array.map((item, index) => {
-    return <Movie key={index} />;
-  });
-
+  const card = popular => {
+    return popular.map((item, index) => {
+      return <Movies key={index} movies={item} />;
+    });
+  };
   return (
     <Container>
-      <CardDeck>{movie}</CardDeck>
+      <CardDeck>{card(popular)}</CardDeck>
     </Container>
   );
 };

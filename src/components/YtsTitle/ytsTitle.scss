@@ -2,8 +2,8 @@
 @import "../../assets/scss_settings/mixins";
 
 #ytsTitle {
-  .container {
-    padding: 3rem 0 0 0;
+  .container_title {
+    padding-top: 3rem;
     // @include padding(3rem, 0rem);
     text-align: center;
     color: #fff;
