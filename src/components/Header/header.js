@@ -8,7 +8,7 @@ import "./header.scss";
 
 const Header = () => {
   return (
-    <header>
+    <header fixed="top">
       <Container className="header_container">
         <Navbar collapseOnSelect expand="lg" variant="dark">
           <Link to="/">

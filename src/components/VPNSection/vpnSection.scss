@@ -1,9 +1,57 @@
 @import "../../assets/scss_settings/variables";
+@import "../../assets/scss_settings/mixins";
 .vpn_section {
   width: 100%;
   min-height: 400px;
   background-color: #1d1d1d;
   .vpn_border {
     border: 5px solid $green;
+    background-color: #000;
+    color: #fff;
+    h1 {
+      font-weight: $font_weight;
+      font-size: 40px;
+      width: 80%;
+      margin: 0 auto;
+      border-bottom: 1px solid $gray;
+    }
+    .details {
+      color: #abcc06;
+      font-weight: $font_weight;
+    }
+    p {
+      font-size: 0.93em;
+      line-height: 30px;
+    }
+    .location {
+      padding: 1px;
+      background: #ad0000;
+      color: #fff;
+    }
+    .os,
+    .resolution,
+    .cpu {
+      padding: 1px;
+      color: #fff;
+      background: #731407;
+    }
+    .ip_address {
+      padding: 1px;
+      background: #ad0000;
+      color: #fff;
+    }
+    h6 {
+      color: #4c96d0;
+      font-weight: $font_weight;
+      font-size: 17px;
+    }
+    .download_link {
+      background: $green;
+      color: #fff;
+      padding: 0.4rem 2rem;
+      border-radius: 5px;
+      text-shadow: 2px 2px #4b9924;
+      font-weight: $font_weight;
+    }
   }
 }

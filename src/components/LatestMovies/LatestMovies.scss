@@ -1,0 +1,19 @@
+@import "../../assets/scss_settings/variables";
+#latest_movies {
+  background-color: $black2;
+  .align_col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h5 {
+      color: #fff;
+    }
+    .browse_link {
+      color: $gray;
+      text-decoration: none;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

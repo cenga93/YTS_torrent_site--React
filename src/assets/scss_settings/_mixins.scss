@@ -18,6 +18,10 @@
   @include dimensions(1px, 20px);
   background-color: $gray;
 }
+@mixin horizontal_line {
+  @include dimensions(100%, 2px);
+  background-color: #fff;
+}
 
 @mixin flex {
   display: flex;
