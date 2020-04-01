@@ -2,7 +2,7 @@ import React from "react";
 import Movie from "../Movie/movie";
 import { Container, CardDeck } from "react-bootstrap";
 
-const ArtistList = ({ data }) => {
+const MovieList = ({ data }) => {
   const receiving = data => {
     return data.map((item, index) => {
       return <Movie key={index} movie={item.title} />;
@@ -16,4 +16,4 @@ const ArtistList = ({ data }) => {
   );
 };
 
-export default ArtistList;
+export default MovieList;

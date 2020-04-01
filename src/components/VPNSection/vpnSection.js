@@ -1,12 +1,16 @@
 import React from "react";
 import "./vpnSection.scss";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 const VPNSection = () => {
   return (
     <section className="vpn_section">
       <Container>
-        <h1>sdfsdlkfsdlfsdjsdflksjdflkjsdflkjsdf</h1>
+        <div className="vpn_border">
+          <Row>
+            <Col>sdfsdf</Col>
+          </Row>
+        </div>
       </Container>
     </section>
   );

@@ -1,3 +1,94 @@
-.card {
-  border: 5px solid #fff;
+@import "../../assets/scss_settings/variables";
+@import "../../assets/scss_settings/mixins";
+
+.hoverCard {
+  .movie_link {
+    .card {
+      overflow: hidden;
+      border: 5px solid #fff;
+      .overlay {
+        position: absolute;
+        top: 0;
+        @include dimensions(100%, 100%);
+        background-color: #ff000000;
+        transition: 0.3s;
+
+        .central {
+          height: 250px;
+          display: none;
+          text-align: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          .starIcon {
+            color: $green;
+          }
+
+          p {
+            color: #fff;
+            font-size: 25px;
+            font-weight: $font_weight;
+          }
+
+          div {
+            p {
+              margin: 0;
+            }
+          }
+        }
+
+        &:hover {
+          background: #000000b2;
+          transition: 0.3s;
+          .central {
+            display: block;
+          }
+        }
+      }
+
+      &:hover {
+        border: 5px solid $green;
+        transition: 0.1s;
+      }
+    }
+  }
+
+  .movie_title {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.95em;
+    font-weight: $font_weight;
+
+    &:hover {
+      color: $gray;
+      transition: 0.1s;
+    }
+  }
+
+  .movie_year {
+    font-size: 0.85em;
+    color: $gray;
+  }
+
+  div.text-center {
+    transition: 0.4s ease-in-out;
+    position: relative;
+    top: 350px;
+
+    button {
+      background: $green;
+      border: none;
+      color: #fff;
+      font-weight: $font_weight;
+    }
+  }
+
+  &:hover {
+    div.text-center {
+      transform: translateY(-90px);
+      transition: 0.4s ease-in-out;
+    }
+  }
 }
