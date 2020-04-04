@@ -8,17 +8,17 @@ import "./SocialIcons.scss";
 const SocialIcons = () => {
   return (
     <div className=" social_div">
-      <Link>
+      <Link to="/">
         <div className="t1">
           <FontAwesomeIcon icon={faFacebookF} size="lg" />
         </div>
       </Link>
-      <Link>
+      <Link to="/">
         <div className="t2">
           <FontAwesomeIcon icon={faTwitter} size="lg" />
         </div>
       </Link>
-      <Link>
+      <Link to="/">
         <div className="t3">
           <FontAwesomeIcon icon={faPlus} size="lg" />
         </div>

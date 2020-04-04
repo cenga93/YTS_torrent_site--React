@@ -38,7 +38,7 @@ const Movie = ({ movie }) => {
               </div>
             </div>
             <div className="text-center">
-              <button className="btn  btn_movie">View Details</button>
+              <button className="btn btn_movie">View Details</button>
             </div>
           </div>
         </Card>
