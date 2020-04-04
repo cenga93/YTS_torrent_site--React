@@ -1,0 +1,14 @@
+@import "../../assets/scss_settings/variables";
+@import "../../assets/scss_settings/mixins";
+
+.progress_row {
+  padding: 0 15px;
+  .progres_bar {
+    @include dimensions(55%, 15px);
+    border-radius: 0px;
+    border: 1px solid $gray;
+    .progress-bar {
+      background: #8ab4f8;
+    }
+  }
+}

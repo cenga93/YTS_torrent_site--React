@@ -2,4 +2,24 @@
 #upcoming {
   background-color: $black;
   min-height: 200px;
+  .align_col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h5 {
+      color: #fff;
+      font-size: 1.15em;
+      font-weight: $font-weight;
+    }
+    .browse_link {
+      font-weight: $font-weight;
+      color: $gray;
+      font-size: 14px;
+      text-decoration: none;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
 }

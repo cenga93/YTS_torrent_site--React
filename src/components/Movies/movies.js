@@ -2,8 +2,8 @@ import React from "react";
 import { Container, CardDeck } from "react-bootstrap";
 import Movies from "../Movie/movie";
 
-const mostPopular = ({ movie }) => {
-  const card = movie => {
+const movies = ({ movie }) => {
+  const card = (movie) => {
     return movie.map((item, index) => {
       return <Movies movie={item} key={index} />;
     });
@@ -15,4 +15,4 @@ const mostPopular = ({ movie }) => {
   );
 };
 
-export default mostPopular;
+export default movies;

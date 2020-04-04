@@ -1,0 +1,84 @@
+@import "../../assets/scss_settings/variables";
+@import "../../assets/scss_settings/mixins";
+#footer {
+  background: $black2;
+  border-top: 1px solid #2f2f2f;
+  .row {
+    justify-content: center;
+    .copy,
+    p {
+      color: #fff;
+      font-size: 12px;
+    }
+    .first_list,
+    .second_list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      margin: 0;
+    }
+
+    .copy {
+      margin-right: 15px !important;
+      font-size: 16px;
+    }
+
+    .first_list li a,
+    .second_list li a {
+      text-decoration: none;
+      color: $gray;
+      font-size: 0.85em;
+      font-weight: $font_weight;
+      transition: 0.4s;
+      &:hover {
+        color: #fff;
+        transition: 0.4s;
+      }
+    }
+
+    .first_list {
+      li {
+        a {
+          position: relative;
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          &::after {
+            content: "";
+            @include dimensions(4px, 1px);
+            background: $gray;
+            position: absolute;
+            left: -2px;
+          }
+        }
+      }
+    }
+
+    .second_list {
+      li {
+        padding: 10px;
+        padding-top: 0;
+        display: flex;
+        align-items: center;
+        &:first-child::after {
+          content: "";
+          @include dimensions(4px, 2px);
+          background-color: $gray;
+          position: relative;
+          left: 11px;
+        }
+      }
+    }
+    p {
+      a {
+        color: $gray;
+        text-decoration: none;
+        transition: 0.4s;
+        &:hover {
+          color: #fff;
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+}

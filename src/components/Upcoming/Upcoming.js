@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Upcoming.scss";
-import MostPopular from "../MostPopular/mostPopular";
+import Movies from "../Movies/movies";
+import { Row, Col, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 /*
   API ENDPOINT PARAMETER: [sort_by]
   *-----------------------
@@ -17,7 +19,7 @@ import MostPopular from "../MostPopular/mostPopular";
 const api = {
   link: `https://yts.mx/api/v2/list_movies.json`,
   sort: `year`,
-  limit: 4
+  limit: 4,
 };
 
 class Upcoming extends Component {
@@ -25,25 +27,34 @@ class Upcoming extends Component {
     super();
 
     this.state = {
-      upcoming: []
+      upcoming: [],
     };
   }
 
   componentDidMount() {
     fetch(`${api.link}?sort_by=${api.sort}&limit=${api.limit}`)
-      .then(data => data.json())
+      .then((data) => data.json())
       .then(({ data }) => {
         this.setState({
-          upcoming: [...data.movies]
+          upcoming: [...data.movies],
         });
-        console.log(this.state.upcoming);
       });
   }
 
   render() {
     return (
-      <section id="upcoming">
-        <MostPopular movie={this.state.upcoming} />
+      <section id="upcoming" className="pt-5 pb-5">
+        <Container className="p-0">
+          <Row className="p-0">
+            <Col className="p-0 align_col">
+              <h5>Upcoming YIFY Movies</h5>
+              <Link to="/login" className="browse_link">
+                Request a Movie
+              </Link>
+            </Col>
+          </Row>
+        </Container>
+        <Movies movie={this.state.upcoming} />
       </section>
     );
   }

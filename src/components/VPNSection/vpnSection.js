@@ -28,7 +28,7 @@ const VPNSection = () => {
               <h6 className="text-center m-3">″Do not risk it! Protect yourself right now by downloading Nord VPN″ - William</h6>
 
               <Row className="justify-content-center mb-3">
-                <Link to="." className="download_link">
+                <Link to="/nesto" className="download_link">
                   <FontAwesomeIcon icon={faDownload} size="lg" className="downloadIcon mr-3" />
                   Download Nord VPN
                 </Link>

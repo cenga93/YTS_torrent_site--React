@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./LatestMovies.scss";
-import MostPopular from "../MostPopular/mostPopular";
+import Movies from "../Movies/movies";
 import { Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -43,7 +43,7 @@ class LatestMovies extends Component {
 
   render() {
     return (
-      <section id="latest_movies" className="pt-5">
+      <section id="latest_movies" className="pt-5 pb-5 shadow">
         <Container className="p-0">
           <Row className="p-0">
             <Col className="p-0 align_col">
@@ -54,7 +54,7 @@ class LatestMovies extends Component {
             </Col>
           </Row>
         </Container>
-        <MostPopular movie={this.state.latestMovies} />
+        <Movies movie={this.state.latestMovies} />
       </section>
     );
   }

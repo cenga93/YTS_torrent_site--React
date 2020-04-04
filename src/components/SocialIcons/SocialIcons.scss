@@ -1,0 +1,33 @@
+@import "../../assets/scss_settings/variables";
+@import "../../assets/scss_settings/mixins";
+.social_div {
+  position: fixed;
+
+  right: 0;
+  top: 20%;
+  .t1,
+  .t2,
+  .t3 {
+    @include dimensions(50px, 50px);
+    @include flex;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    transition: width 0.15s ease-in-out;
+    &:hover {
+      width: 65px;
+      transition: width 0.15s ease-in-out;
+    }
+  }
+  .t1 {
+    background-color: #3b5998;
+  }
+  .t2 {
+    background-color: #1da1f2;
+    top: 50px;
+  }
+  .t3 {
+    background-color: #ff6550;
+    top: 100px;
+  }
+}
