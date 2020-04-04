@@ -4,14 +4,31 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./movie.scss";
+const cover = {
+  fullHD: `https://yts.mx/assets/images/website/banner1080p.png`,
+  hd: `https://yts.mx/assets/images/website/banner720p.png`,
+};
 
 const Movie = ({ movie }) => {
+  const nesto = (movie) => {
+    let array = [];
+    for (let i = 0; i < movie.torrents.length; i++) {
+      array.push(movie.torrents[i].quality);
+    }
+    if (array.includes("1080p")) {
+      return <img src={cover.fullHD} alt="1080p" />;
+    } else if (array.includes("720p")) {
+      return <img src={cover.hd} alt="1080p" />;
+    }
+  };
+
   return (
     <div className="col-lg-3 col-md-3 col-sm-6 p-4 hoverCard">
       <Link className="movie_link" to={`movie/${movie.slug}`}>
         <Card className="m-0 cardOld">
           <Card.Img variant="top" src={movie.medium_cover_image} />
           <div className="overlay">
+            {nesto(movie)}
             <div className="central">
               <FontAwesomeIcon icon={faStar} size="lg" className="starIcon" />
               <p className="mt-1">{movie.rating} / 10</p>

@@ -20,23 +20,23 @@ import { Link } from "react-router-dom";
 const api = {
   link: `https://yts.mx/api/v2/list_movies.json`,
   sort: `date_added`,
-  limit: 8
+  limit: 8,
 };
 
 class LatestMovies extends Component {
   constructor() {
     super();
     this.state = {
-      latestMovies: []
+      latestMovies: [],
     };
   }
 
   componentDidMount() {
     fetch(`${api.link}?sort_by=${api.sort}&limit=${api.limit}`)
-      .then(data => data.json())
+      .then((data) => data.json())
       .then(({ data }) => {
         this.setState({
-          latestMovies: [...data.movies]
+          latestMovies: [...data.movies],
         });
       });
   }

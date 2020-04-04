@@ -2,7 +2,6 @@
 @import "../../assets/scss_settings/mixins";
 .social_div {
   position: fixed;
-
   right: 0;
   top: 20%;
   .t1,
@@ -20,14 +19,14 @@
     }
   }
   .t1 {
-    background-color: #3b5998;
+    background-color: $fb_bg;
   }
   .t2 {
-    background-color: #1da1f2;
+    background-color: $tw_bg;
     top: 50px;
   }
   .t3 {
-    background-color: #ff6550;
+    background-color: $glg_bg;
     top: 100px;
   }
 }

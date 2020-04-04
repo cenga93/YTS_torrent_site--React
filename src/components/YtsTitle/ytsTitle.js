@@ -8,6 +8,7 @@ import SocialIcons from "../SocialIcons/SocialIcons";
 import rcc from "../../assets/img/rss-icon.webp";
 import bg from "../../assets/img/background.jpg";
 import "./ytsTitle.scss";
+
 /*
   API ENDPOINT PARAMETER: [sort_by]
   *-----------------------

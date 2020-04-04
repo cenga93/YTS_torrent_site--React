@@ -5,8 +5,6 @@ import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import "./SocialIcons.scss";
 
-/* <FontAwesomeIcon icon={faFacebookF} size="lg" /> */
-
 const SocialIcons = () => {
   return (
     <div className=" social_div">
