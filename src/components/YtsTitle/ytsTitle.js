@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Movies from "../Movies/movies";
+import { Movies, SocialIcons } from "../../components";
+import { fetchData } from "../../api";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import SocialIcons from "../SocialIcons/SocialIcons";
 import rcc from "../../assets/img/rss-icon.webp";
 import bg from "../../assets/img/background.jpg";
 import "./ytsTitle.scss";
@@ -23,7 +23,6 @@ import "./ytsTitle.scss";
   *-------------------------
 */
 const api = {
-  link: `https://yts.mx/api/v2/list_movies.json`,
   sort: `download_count`,
   limit: 4,
 };
@@ -37,17 +36,16 @@ class ytsTitle extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch(`${api.link}?sort_by=${api.sort}&limit=${api.limit}`)
-      .then((data) => data.json())
-      .then(({ data }) => {
-        this.setState({
-          mostPopular: [...data.movies],
-        });
-      });
+  async componentDidMount() {
+    const { sort, limit } = api;
+    const {
+      data: { movies },
+    } = await fetchData(sort, limit);
+    this.setState({ mostPopular: [...movies] });
   }
 
   render() {
+    const { mostPopular } = this.state;
     return (
       <section
         id="ytsTitle"
@@ -75,7 +73,7 @@ class ytsTitle extends Component {
         </Container>
 
         {/* MOST POPULAR MOVIES */}
-        <Movies movie={this.state.mostPopular} />
+        <Movies movie={mostPopular} />
       </section>
     );
   }

@@ -1,9 +1,8 @@
 import React from "react";
-import YtsTitle from "../YtsTitle/ytsTitle";
-import VpnSection from "../VPNSection/vpnSection";
-import LatestMovies from "../LatestMovies/LatestMovies";
-import Upcoming from "../Upcoming/Upcoming";
-import Footer from "../Footer/Footer";
+
+/* IMPORT COMPONENTS */
+import { YtsTitle, VpnSection, LatestMovies, Upcoming } from "../../components";
+
 const Home = () => {
   return (
     <>
@@ -11,7 +10,6 @@ const Home = () => {
       <VpnSection />
       <LatestMovies />
       <Upcoming />
-      <Footer />
     </>
   );
 };

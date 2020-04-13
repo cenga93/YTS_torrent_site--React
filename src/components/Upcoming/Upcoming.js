@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Upcoming.scss";
-import Movies from "../Movies/movies";
+import { fetchData } from "../../api";
+import { Movies } from "../../components";
 import { Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 /*
@@ -17,7 +18,6 @@ import { Link } from "react-router-dom";
   *-------------------------
 */
 const api = {
-  link: `https://yts.mx/api/v2/list_movies.json`,
   sort: `year`,
   limit: 4,
 };
@@ -30,18 +30,16 @@ class Upcoming extends Component {
       upcoming: [],
     };
   }
-
-  componentDidMount() {
-    fetch(`${api.link}?sort_by=${api.sort}&limit=${api.limit}`)
-      .then((data) => data.json())
-      .then(({ data }) => {
-        this.setState({
-          upcoming: [...data.movies],
-        });
-      });
+  async componentDidMount() {
+    const { sort, limit } = api;
+    const {
+      data: { movies },
+    } = await fetchData(sort, limit);
+    this.setState({ upcoming: [...movies] });
   }
 
   render() {
+    const { upcoming } = this.state;
     return (
       <section id="upcoming" className="pt-5 pb-5">
         <Container className="p-0">
@@ -54,7 +52,7 @@ class Upcoming extends Component {
             </Col>
           </Row>
         </Container>
-        <Movies movie={this.state.upcoming} />
+        <Movies movie={upcoming} />
       </section>
     );
   }

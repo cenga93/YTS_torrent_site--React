@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./LatestMovies.scss";
-import Movies from "../Movies/movies";
+import { fetchData } from "../../api";
+import { Movies } from "../../components";
 import { Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import "./LatestMovies.scss";
 /*
   API ENDPOINT PARAMETER: [sort_by]
   *-----------------------
@@ -18,7 +18,6 @@ import { Link } from "react-router-dom";
   *-------------------------
 */
 const api = {
-  link: `https://yts.mx/api/v2/list_movies.json`,
   sort: `date_added`,
   limit: 8,
 };
@@ -31,17 +30,16 @@ class LatestMovies extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch(`${api.link}?sort_by=${api.sort}&limit=${api.limit}`)
-      .then((data) => data.json())
-      .then(({ data }) => {
-        this.setState({
-          latestMovies: [...data.movies],
-        });
-      });
+  async componentDidMount() {
+    const { sort, limit } = api;
+    const {
+      data: { movies },
+    } = await fetchData(sort, limit);
+    this.setState({ latestMovies: [...movies] });
   }
 
   render() {
+    const { latestMovies } = this.state;
     return (
       <section id="latest_movies" className="pt-5 pb-5 shadow">
         <Container className="p-0">
@@ -54,7 +52,7 @@ class LatestMovies extends Component {
             </Col>
           </Row>
         </Container>
-        <Movies movie={this.state.latestMovies} />
+        <Movies movie={latestMovies} />
       </section>
     );
   }

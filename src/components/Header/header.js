@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../../assets/img/logo.svg";
-import Search from "../Search/Search";
+import { Search } from "../../components";
 import "./header.scss";
 
 class Header extends Component {

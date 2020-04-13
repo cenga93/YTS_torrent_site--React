@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, CardDeck } from "react-bootstrap";
-import Movie from "../Movie/movie";
+import { Movie } from "../../components";
 
 const movies = ({ movie }) => {
   const card = (movie) => {
