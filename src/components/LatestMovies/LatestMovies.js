@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { fetchData } from "../../api";
 import { Movies } from "../../components";
-import { Row, Col, Container } from "react-bootstrap";
+import { Wrapper } from "../../components";
+import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./LatestMovies.scss";
 /*
@@ -23,8 +24,8 @@ const api = {
 };
 
 class LatestMovies extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       latestMovies: [],
     };
@@ -41,19 +42,17 @@ class LatestMovies extends Component {
   render() {
     const { latestMovies } = this.state;
     return (
-      <section id="latest_movies" className="pt-5 pb-5 shadow">
-        <Container className="p-0">
-          <Row className="p-0">
-            <Col className="p-0 align_col">
-              <h5>Latest YIFY Movies Torrents</h5>
-              <Link to="/browse-movies" className="browse_link">
-                Browse All
-              </Link>
-            </Col>
-          </Row>
-        </Container>
+      <Wrapper className={this.props.className}>
+        <Row className="p-0">
+          <Col className="p-0 align_col">
+            <h5>Latest YIFY Movies Torrents</h5>
+            <Link to="/browse-movies" className="browse_link">
+              Browse All
+            </Link>
+          </Col>
+        </Row>
         <Movies movie={latestMovies} />
-      </section>
+      </Wrapper>
     );
   }
 }

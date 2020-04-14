@@ -15,5 +15,5 @@ const fetchData = async (sort, limit) => {
     console.log(error);
   }
 };
-/* EXPORTING */
+/* exporting */
 export { fetchData };

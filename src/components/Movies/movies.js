@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, CardDeck } from "react-bootstrap";
+import { CardDeck } from "react-bootstrap";
 import { Movie } from "../../components";
 
 const movies = ({ movie }) => {
@@ -8,11 +8,7 @@ const movies = ({ movie }) => {
       return <Movie movie={item} key={index} />;
     });
   };
-  return (
-    <Container>
-      <CardDeck>{card(movie)}</CardDeck>
-    </Container>
-  );
+  return <CardDeck>{card(movie)}</CardDeck>;
 };
 
 export default movies;

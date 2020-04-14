@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import "./Upcoming.scss";
-import { fetchData } from "../../api";
-import { Movies } from "../../components";
-import { Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Row, Col } from "react-bootstrap";
+import { Movies, Wrapper } from "../../components";
+import { fetchData } from "../../api";
+import "./Upcoming.scss";
+
 /*
   API ENDPOINT PARAMETER: [sort_by]
   *-----------------------
@@ -23,8 +24,8 @@ const api = {
 };
 
 class Upcoming extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       upcoming: [],
@@ -41,19 +42,17 @@ class Upcoming extends Component {
   render() {
     const { upcoming } = this.state;
     return (
-      <section id="upcoming" className="pt-5 pb-5">
-        <Container className="p-0">
-          <Row className="p-0">
-            <Col className="p-0 align_col">
-              <h5>Upcoming YIFY Movies</h5>
-              <Link to="/login" className="browse_link">
-                Request a Movie
-              </Link>
-            </Col>
-          </Row>
-        </Container>
-        <Movies movie={upcoming} />
-      </section>
+      <Wrapper className={this.props.className}>
+        <Row className="p-0">
+          <Col className="p-0 align_col">
+            <h5>Upcoming YIFY Movies</h5>
+            <Link to="/login" className="browse_link">
+              Request a Movie
+            </Link>
+          </Col>
+          <Movies movie={upcoming} />
+        </Row>
+      </Wrapper>
     );
   }
 }

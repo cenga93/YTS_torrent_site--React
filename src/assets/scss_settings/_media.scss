@@ -1,1 +1,37 @@
+@media screen and (max-width: 576px) {
+  .header_container {
+    .logo {
+      width: 90%;
+    }
+  }
+}
 
+@media screen and (max-width: 992px) {
+  .header_container {
+    .navbar-nav,
+    .navbar-nav .form-group {
+      @include flex;
+    }
+
+    .navbar-nav {
+      align-items: flex-start !important;
+      margin-top: 2rem;
+
+      .form-inline,
+      .form-inline .form-group {
+        width: 100%;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+        .searchInput {
+          width: 97%;
+        }
+      }
+
+      .vertical_line {
+        display: none;
+      }
+    }
+  }
+}

@@ -46,6 +46,10 @@
             display: block;
           }
         }
+        img {
+          position: absolute;
+          left: 0;
+        }
       }
 
       &:hover {
@@ -76,7 +80,7 @@
   div.text-center {
     transition: 0.4s ease-in-out;
     position: relative;
-    top: 250px;
+    top: 350px;
 
     button {
       background: $green;

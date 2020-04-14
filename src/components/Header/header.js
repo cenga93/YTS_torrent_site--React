@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from "../../assets/img/logo.svg";
 import { Search } from "../../components";
+import logo from "../../assets/img/logo.svg";
 import "./header.scss";
 
 class Header extends Component {

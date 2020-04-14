@@ -1,6 +1,6 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 /* IMPORT COMPONENTS */
 import { Header, Home, Footer } from "./components";
@@ -9,7 +9,7 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <Route exact path="/" component={Home} />
-      <Footer />
+      <Footer className={`footer pt-4 shadow`} />
     </BrowserRouter>
   );
 };
