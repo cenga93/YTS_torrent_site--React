@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Search } from "../../components";
+import { SearchField } from "..";
 import logo from "../../assets/img/logo.svg";
 import "./header.scss";
 
@@ -44,13 +44,17 @@ class Header extends Component {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">
                 {/* Search component */}
-                <Search Search={this.handleChange} />
+                <SearchField Search={this.handleChange} />
+                <Link to="/" className="nav-link">
+                  Home
+                </Link>
 
-                <Nav.Link href="#1">Home</Nav.Link>
                 <Nav.Link href="#2" className="link_highlight">
                   4K
                 </Nav.Link>
-                <Nav.Link href="#3">Browse Movies</Nav.Link>
+                <Link to="/browse-movies" className="nav-link">
+                  Browse Movies
+                </Link>
                 <Nav.Link href="#4" className="login_link">
                   Login
                 </Nav.Link>

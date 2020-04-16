@@ -8,8 +8,22 @@
     border: 5px solid $green;
     background-color: #000;
     color: #fff;
-    h1 {
+    h1,
+    h6,
+    .download_link,
+    .details {
       font-weight: $font_weight;
+    }
+    .os,
+    .resolution,
+    .cpu,
+    .location,
+    .ip_address {
+      padding: 1px;
+      color: #fff;
+      background: #731407;
+    }
+    h1 {
       font-size: 40px;
       width: 80%;
       margin: 0 auto;
@@ -17,32 +31,19 @@
     }
     .details {
       color: #abcc06;
-      font-weight: $font_weight;
     }
+
     p {
       font-size: 0.93em;
       line-height: 30px;
     }
-    .location {
-      padding: 1px;
-      background: #ad0000;
-      color: #fff;
-    }
-    .os,
-    .resolution,
-    .cpu {
-      padding: 1px;
-      color: #fff;
-      background: #731407;
-    }
+    .location,
     .ip_address {
-      padding: 1px;
       background: #ad0000;
       color: #fff;
     }
     h6 {
       color: #4c96d0;
-      font-weight: $font_weight;
       font-size: 17px;
     }
     .download_link {
@@ -51,7 +52,6 @@
       padding: 0.4rem 2rem;
       border-radius: 5px;
       text-shadow: 2px 2px #4b9924;
-      font-weight: $font_weight;
       text-decoration: none;
     }
   }

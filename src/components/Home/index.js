@@ -1,7 +1,10 @@
 import React from "react";
-
-/* IMPORT COMPONENTS */
-import { YtsTitle, VpnSection, LatestMovies, Upcoming } from "../../components";
+/* 
+-----------------------------------
+* -----  IMPORT COMPONENTS -----
+-----------------------------------
+*/
+import { YtsTitle, VpnSection, LatestMovies, Upcoming } from "..";
 
 const Home = () => {
   return (

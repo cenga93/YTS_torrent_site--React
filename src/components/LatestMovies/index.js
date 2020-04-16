@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { fetchData } from "../../api";
-import { Movies } from "../../components";
-import { Wrapper } from "../../components";
+import { Movies } from "..";
+import { Wrapper } from "..";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./LatestMovies.scss";
@@ -18,12 +18,10 @@ import "./LatestMovies.scss";
     * -> sort_by = date_added
   *-------------------------
 */
-const api = {
-  sort: `date_added`,
-  limit: 8,
-};
+const api = {sort: `like_count`,limit: 8};
+const { sort, limit } = api;
 
-class LatestMovies extends Component {
+class LatMovies extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,17 +30,15 @@ class LatestMovies extends Component {
   }
 
   async componentDidMount() {
-    const { sort, limit } = api;
-    const {
-      data: { movies },
-    } = await fetchData(sort, limit);
+    const {data: { movies }} = await fetchData(sort, limit);
     this.setState({ latestMovies: [...movies] });
   }
 
   render() {
     const { latestMovies } = this.state;
+    const { className } = this.props;
     return (
-      <Wrapper className={this.props.className}>
+      <Wrapper className={className}>
         <Row className="p-0">
           <Col className="p-0 align_col">
             <h5>Latest YIFY Movies Torrents</h5>
@@ -56,4 +52,4 @@ class LatestMovies extends Component {
     );
   }
 }
-export default LatestMovies;
+export default LatMovies;

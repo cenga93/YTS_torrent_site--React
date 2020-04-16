@@ -5,14 +5,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    h5,
+    .browse_link {
+      font-weight: $font-weight;
+    }
+
     h5 {
       color: #fff;
-      font-weight: $font-weight;
       font-size: 1.15em;
     }
     .browse_link {
       color: $gray;
-      font-weight: $font-weight;
       text-decoration: none;
       font-size: 14px;
       &:hover {

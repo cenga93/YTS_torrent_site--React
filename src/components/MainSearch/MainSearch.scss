@@ -1,0 +1,53 @@
+@import "../../assets/scss_settings/variables";
+.main_search {
+  background: $black2;
+  min-height: 200px;
+  .container {
+    display: flex;
+    justify-content: center;
+
+    form {
+      input,
+      select {
+        background-color: $input_bg;
+        border: none;
+      }
+      input {
+        color: $gray;
+        font-weight: $font_weight;
+      }
+      .search_btn {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        background: $green;
+        border: none;
+        height: 100%;
+      }
+      select {
+        color: $gray;
+        font-size: 0.9em;
+      }
+      h4 {
+        font-size: 1.35em;
+      }
+
+      h4,
+      label {
+        color: $gray_dark2;
+        font-weight: $font_weight;
+      }
+      label {
+        font-size: 0.9em;
+      }
+      .col {
+        padding: 0.7rem;
+      }
+      .col:first-child {
+        padding-left: 0.3rem;
+      }
+      .col:last-child {
+        padding-right: 0.3rem;
+      }
+    }
+  }
+}

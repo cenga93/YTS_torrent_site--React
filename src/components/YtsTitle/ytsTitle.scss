@@ -4,6 +4,7 @@ $image: url("../../assets/img/background.jpg");
 .ytsTitle {
   background: linear-gradient(180deg, rgba(29, 29, 29, 0.6) 0%, rgb(29, 29, 29) 100%, rgba(29, 29, 29, 0.61) 100%), $image no-repeat center/cover;
   .container {
+    padding: 0;
     padding-top: 3rem;
     text-align: center;
     color: #fff;

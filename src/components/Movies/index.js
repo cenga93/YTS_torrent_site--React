@@ -1,8 +1,8 @@
 import React from "react";
 import { CardDeck } from "react-bootstrap";
-import { Movie } from "../../components";
+import { Movie } from "..";
 
-const movies = ({ movie }) => {
+const Movies = ({ movie }) => {
   const card = (movie) => {
     return movie.map((item, index) => {
       return <Movie movie={item} key={index} />;
@@ -11,4 +11,4 @@ const movies = ({ movie }) => {
   return <CardDeck>{card(movie)}</CardDeck>;
 };
 
-export default movies;
+export default Movies;

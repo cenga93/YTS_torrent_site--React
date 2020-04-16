@@ -10,7 +10,7 @@ const cover = {
 };
 
 const Movie = ({ movie }) => {
-  const nesto = (movie) => {
+  const checkQuality = (movie) => {
     let array = [];
     for (let i = 0; i < movie.torrents.length; i++) {
       array.push(movie.torrents[i].quality);
@@ -28,7 +28,7 @@ const Movie = ({ movie }) => {
         <Card className="m-0 cardOld">
           <Card.Img variant="top" src={movie.medium_cover_image} />
           <div className="overlay">
-            {nesto(movie)}
+            {checkQuality(movie)}
             <div className="central">
               <FontAwesomeIcon icon={faStar} size="lg" className="starIcon" />
               <p className="mt-1">{movie.rating} / 10</p>

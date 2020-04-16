@@ -1,7 +1,7 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Wrapper } from "../../components";
+import { Wrapper } from "..";
 import "./Footer.scss";
 
 const navigation = [
