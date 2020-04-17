@@ -11,7 +11,7 @@ const App = () => {
       <SocialIcons />
       <Route exact path="/" component={Home} />
       <Route exact path="/browse-movies" component={BrowseMovie} />
-      <Footer className={`footer pt-4 shadow`} />
+      <Footer className="footer pt-4 shadow" />
     </BrowserRouter>
   );
 };

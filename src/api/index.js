@@ -15,5 +15,19 @@ const fetchData = async (sort, limit) => {
     console.log(error);
   }
 };
+
+const fetchAllData = async (page) => {
+  try {
+    let url = `${API_URL}?&page=${page}`;
+    const data = await fetch(url)
+      .then((response) => response.json())
+      .then((response) => {
+        return response;
+      });
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 /* EXPORTING */
-export { fetchData };
+export { fetchData, fetchAllData };

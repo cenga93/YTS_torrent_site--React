@@ -1,9 +1,6 @@
 import React from "react";
-/* 
------------------------------------
-* -----  IMPORT COMPONENTS -----
------------------------------------
-*/
+
+/* IMPORT COMPONENTS */
 import { YtsTitle, VpnSection, LatestMovies, Upcoming } from "..";
 
 const Home = () => {

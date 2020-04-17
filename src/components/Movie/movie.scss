@@ -77,22 +77,25 @@
     margin: 0;
   }
 
-  div.text-center {
-    transition: 0.4s ease-in-out;
+  .overlay {
     position: relative;
-    top: 350px;
-
-    button {
-      background: $green;
-      border: none;
-      color: #fff;
-      font-weight: $font_weight;
+    div.text-center {
+      position: absolute;
+      transition: 0.4s ease-in-out;
+      position: relative;
+      bottom: -360px;
+      button {
+        background: $green;
+        border: none;
+        color: #fff;
+        font-weight: $font_weight;
+      }
     }
   }
 
   &:hover {
     div.text-center {
-      transform: translateY(-90px);
+      transform: translateY(-130px);
       transition: 0.4s ease-in-out;
     }
   }

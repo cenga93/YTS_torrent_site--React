@@ -1,0 +1,25 @@
+@import "../../assets/scss_settings/variables";
+ul.pagination {
+  margin: 0;
+
+  li {
+    .page-link {
+      border: 1px solid $gray_dark;
+      background-color: transparent;
+      color: #fff;
+      border-radius: 3px;
+      padding: 0.7rem 0.8rem;
+      margin: 0.2rem;
+      font-size: 14px;
+      font-weight: $font_weight;
+      &:hover {
+        background-color: $green;
+      }
+    }
+  }
+  li.active .page-link {
+    background-color: $green;
+    border: 1px solid $green;
+    border-radius: 3px;
+  }
+}

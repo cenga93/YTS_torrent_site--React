@@ -1,0 +1,20 @@
+@import "../../assets/scss_settings/variables";
+.all_Movies {
+  background-color: $black;
+  .hoverCard {
+    max-width: 20%;
+  }
+  .col_title {
+    display: flex;
+    justify-content: center;
+    h5 {
+      display: inline-block;
+      color: $green;
+      font-size: 21px;
+    }
+  }
+  .pagination_row {
+    display: flex;
+    justify-content: center;
+  }
+}
