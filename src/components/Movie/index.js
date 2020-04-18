@@ -23,10 +23,11 @@ const Movie = ({ movie }) => {
   };
 
   return (
-    <div className="col-lg-3 col-md-3 col-sm-6 p-4 hoverCard">
+    <>
       <Link className="movie_link" to={`movie/${movie.slug}`}>
         <Card className="m-0 cardOld">
-          <Card.Img variant="top" src={movie.medium_cover_image} />
+          {movie.medium_cover_image ? <Card.Img variant="top" src={movie.medium_cover_image} /> : <h1>Nema slike</h1>}
+
           <div className="overlay">
             {checkQuality(movie)}
             <div className="central">
@@ -37,6 +38,7 @@ const Movie = ({ movie }) => {
                 <p>{movie.genres[1]}</p>
               </div>
             </div>
+
             <div className="text-center">
               <button className="btn btn_movie">View Details</button>
             </div>
@@ -47,7 +49,7 @@ const Movie = ({ movie }) => {
         {movie.title_english}
       </Link>
       <p className="movie_year">{movie.year}</p>
-    </div>
+    </>
   );
 };
 

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Movies, Wrapper } from "..";
+import { Wrapper, Grid3 } from "..";
 import { fetchData } from "../../api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import rcc from "../../assets/img/rss-icon.webp";
 import "./ytsTitle.scss";
-/*
+/* 
   API ENDPOINT PARAMETER: [sort_by]
   *-----------------------
     * -> sort_by = title
@@ -49,7 +49,8 @@ const YtsTitle = ({ className }) => {
           <img src={rcc} alt="rcc" />
         </Link>
       </h5>
-      <Movies movie={mostPopular} />
+      <Grid3 movie={mostPopular} />
+      {/* <Movies movie={mostPopular} /> */}
     </Wrapper>
   );
 };

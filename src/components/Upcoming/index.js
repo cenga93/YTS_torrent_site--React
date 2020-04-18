@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
-import { Movies, Wrapper } from "..";
+import { Wrapper, Grid3 } from "..";
 import { fetchData } from "../../api";
 import "./Upcoming.scss";
+
 /*
   API ENDPOINT PARAMETER: [sort_by]
   *-----------------------
@@ -40,7 +41,7 @@ const Upcoming = ({ className }) => {
           Request a Movie
         </Link>
       </Col>
-      <Movies movie={upcoming} />
+      <Grid3 movie={upcoming} />
     </Wrapper>
   );
 };

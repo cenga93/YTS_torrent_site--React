@@ -2,6 +2,7 @@ import React from "react";
 import { Wrapper } from "..";
 import { Col, Row, Form, Button } from "react-bootstrap";
 import "./MainSearch.scss";
+
 const MainSearch = ({ className }) => {
   return (
     <Wrapper className={className}>

@@ -1,9 +1,7 @@
 @import "../../assets/scss_settings/variables";
 .all_Movies {
   background-color: $black;
-  .hoverCard {
-    max-width: 20%;
-  }
+
   .col_title {
     display: flex;
     justify-content: center;
@@ -14,7 +12,9 @@
     }
   }
   .pagination_row {
-    display: flex;
-    justify-content: center;
+    .col {
+      display: flex;
+      justify-content: center;
+    }
   }
 }

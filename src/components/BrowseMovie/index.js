@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { MainSearch, Wrapper } from "../../components";
 import { Col, Row } from "react-bootstrap";
-import { Movies } from "../../components";
-import Pagin from "../Pagin/";
-import "./BrowseMovie.scss";
+import { Pagin, MainSearch, Wrapper, Grid3 } from "..";
 import { fetchAllData } from "../../api";
+import "./BrowseMovie.scss";
 
 class BrowseMovie extends Component {
   constructor(props) {
@@ -45,15 +43,19 @@ class BrowseMovie extends Component {
             </Col>
           </Row>
           <Row className="pagination_row p-4">
-            {/* Pagination */}
-            <Pagin nextPage={this.nextPage} currentPage={this.state.currentPage} totalPages={this.state.totalPages} />
+            <Col>
+              {/* Pagination */}
+              <Pagin nextPage={this.nextPage} currentPage={this.state.currentPage} totalPages={this.state.totalPages} />
+            </Col>
           </Row>
-          <Row>
-            <Movies movie={this.state.allMovies} />
-          </Row>
-          <Row className="pagination_row p-4">
-            {/* Pagination */}
-            <Pagin nextPage={this.nextPage} currentPage={this.state.currentPage} totalPages={this.state.totalPages} />
+
+          <Grid3 movie={this.state.allMovies} />
+
+          <Row className="pagination_row pt-3 pb-1">
+            <Col>
+              {/* Pagination */}
+              <Pagin nextPage={this.nextPage} currentPage={this.state.currentPage} totalPages={this.state.totalPages} />
+            </Col>
           </Row>
         </Wrapper>
       </>

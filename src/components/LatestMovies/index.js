@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { fetchData } from "../../api";
-import { Movies } from "..";
-import { Wrapper } from "..";
+import { Wrapper, Grid3 } from "..";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 import "./LatestMovies.scss";
+
 /*
   API ENDPOINT PARAMETER: [sort_by]
   *-----------------------
@@ -42,7 +43,7 @@ const LatMovies = ({ className }) => {
           </Link>
         </Col>
       </Row>
-      <Movies movie={latestMovies} />
+      <Grid3 movie={latestMovies} />
     </Wrapper>
   );
 };
