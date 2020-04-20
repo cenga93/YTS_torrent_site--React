@@ -40,7 +40,6 @@ const Header = () => {
               <Link to="/" className="nav-link">
                 Home
               </Link>
-
               <Nav.Link href="#2" className="link_highlight">
                 4K
               </Nav.Link>

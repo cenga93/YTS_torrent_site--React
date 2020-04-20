@@ -7,7 +7,7 @@ import "./SocialIcons.scss";
 
 const SocialIcons = () => {
   return (
-    <div className=" social_div">
+    <div className="social_div">
       <Link to="/">
         <div className="t1">
           <FontAwesomeIcon icon={faFacebookF} size="lg" />

@@ -15,6 +15,9 @@
       input {
         color: $gray;
         font-weight: $font_weight;
+        &:focus {
+          background-color: $input_bg;
+        }
       }
       .search_btn {
         padding-left: 1.5rem;

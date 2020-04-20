@@ -1,14 +1,14 @@
 import React from "react";
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { Movie } from "..";
 
 const Grid3 = ({ movie }) => {
   const card = (movie) => {
     return movie.map((item, index) => {
       return (
-        <div className="col-lg-3 col-md-3 col-sm-6 p-4 hoverCard" key={index}>
+        <Col lg={3} md={3} sm={6} className="hoverCard p-4" key={index}>
           <Movie movie={item} />
-        </div>
+        </Col>
       );
     });
   };

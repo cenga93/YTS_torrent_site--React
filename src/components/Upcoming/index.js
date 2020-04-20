@@ -5,26 +5,10 @@ import { Wrapper, Grid3 } from "..";
 import { fetchData } from "../../api";
 import "./Upcoming.scss";
 
-/*
-  API ENDPOINT PARAMETER: [sort_by]
-  *-----------------------
-    * -> sort_by = title
-    * -> sort_by = year
-    * -> sort_by = rating
-    * -> sort_by = peers
-    * -> sort_by = seeds
-    * -> sort_by = download_count
-    * -> sort_by = like_count
-    * -> sort_by = date_added
-  *-------------------------
-*/
-
 const api = { sort: `year`, limit: 4 };
 const { sort, limit } = api;
-
 const Upcoming = ({ className }) => {
   const [upcoming, setUpcoming] = useState([]);
-
   useEffect(() => {
     const fetchUpcoming = async () => {
       const { data } = await fetchData(sort, limit);
@@ -46,15 +30,3 @@ const Upcoming = ({ className }) => {
   );
 };
 export default Upcoming;
-
-// async componentDidMount() {
-//   const { sort, limit } = api;
-//   const {
-//     data: { movies },
-//   } = await fetchData(sort, limit);
-//   this.setState({ upcoming: [...movies] });
-// }
-
-// this.state = {
-//   upcoming: [],
-// };

@@ -1,4 +1,5 @@
-import React, { useLayoutEffect, useState } from "react";
+import React from "react";
+// , { useLayoutEffect, useState }
 import { Pagination } from "react-bootstrap";
 import "./Pagin.scss";
 
@@ -7,27 +8,26 @@ const Pagin = ({ currentPage, totalPages, nextPage }) => {
   let range = 11;
   let items = [];
 
-  function useWindowSize() {
-    const [size, setSize] = useState(0);
-    useLayoutEffect(() => {
-      function updateSize() {
-        setSize(window.innerWidth);
-      }
-      window.addEventListener("resize", updateSize);
-      updateSize();
-      return () => window.removeEventListener("resize", updateSize);
-    }, []);
+  // function useWindowSize() {
+  //   const [size, setSize] = useState(0);
+  //   useLayoutEffect(() => {
+  //     function updateSize() {
+  //       setSize(window.innerWidth);
+  //     }
+  //     window.addEventListener("resize", updateSize);
+  //     updateSize();
+  //     return () => window.removeEventListener("resize", updateSize);
+  //   }, []);
 
-    if (size < 820) {
-      range = 1;
-    }
-    return range;
-  }
+  //   // if (size < 820) {
+  //   //   range = 1;
+  //   // }
+  //   return range;
+  // }
+  // useWindowSize();
 
-  useWindowSize();
-
-  if (currentPage <= 10) {
-    for (let i = 1; i <= range; i++) {
+  if (totalPages < range) {
+    for (let i = 1; i <= totalPages; i++) {
       items.push(
         <Pagination.Item key={i} active={i === active} onClick={() => nextPage(i)}>
           {i}
@@ -42,14 +42,25 @@ const Pagin = ({ currentPage, totalPages, nextPage }) => {
             {i}
           </Pagination.Item>
         );
+        console.log(items);
       }
     } else {
-      for (let i = currentPage - 4; i <= currentPage + 4; i++) {
-        items.push(
-          <Pagination.Item key={i} active={i === active} onClick={() => nextPage(i)}>
-            {i}
-          </Pagination.Item>
-        );
+      if (currentPage < range) {
+        for (let i = 1; i <= range; i++) {
+          items.push(
+            <Pagination.Item key={i} active={i === active} onClick={() => nextPage(i)}>
+              {i}
+            </Pagination.Item>
+          );
+        }
+      } else {
+        for (let i = currentPage - 4; i <= currentPage + 4; i++) {
+          items.push(
+            <Pagination.Item key={i} active={i === active} onClick={() => nextPage(i)}>
+              {i}
+            </Pagination.Item>
+          );
+        }
       }
     }
   }
@@ -61,7 +72,6 @@ const Pagin = ({ currentPage, totalPages, nextPage }) => {
           <Pagination.First onClick={() => nextPage(1)}>
             <span aria-hidden="true">‹‹</span>&nbsp;First
           </Pagination.First>
-
           <Pagination.Prev onClick={() => nextPage(currentPage - 1)}>
             <span aria-hidden="true">‹‹</span>&nbsp;Previous
           </Pagination.Prev>
@@ -69,7 +79,6 @@ const Pagin = ({ currentPage, totalPages, nextPage }) => {
         </>
       ) : null}
       {items}
-
       {currentPage <= totalPages - 5 ? <Pagination.Ellipsis /> : null}
       {currentPage !== totalPages ? (
         <>
@@ -77,7 +86,6 @@ const Pagin = ({ currentPage, totalPages, nextPage }) => {
             Next&nbsp;
             <span aria-hidden="true">››</span>
           </Pagination.Next>
-
           <Pagination.Last onClick={() => nextPage(totalPages)}>
             Last&nbsp;<span aria-hidden="true">››</span>
           </Pagination.Last>

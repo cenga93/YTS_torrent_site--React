@@ -6,19 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import rcc from "../../assets/img/rss-icon.webp";
 import "./ytsTitle.scss";
-/* 
-  API ENDPOINT PARAMETER: [sort_by]
-  *-----------------------
-    * -> sort_by = title
-    * -> sort_by = year
-    * -> sort_by = rating
-    * -> sort_by = peers
-    * -> sort_by = seeds
-    * -> sort_by = download_count
-    * -> sort_by = like_count
-    * -> sort_by = date_added
-  *-------------------------
-*/
+
 const api = { sort: `download_count`, limit: 4 };
 const { sort, limit } = api;
 
@@ -50,7 +38,6 @@ const YtsTitle = ({ className }) => {
         </Link>
       </h5>
       <Grid3 movie={mostPopular} />
-      {/* <Movies movie={mostPopular} /> */}
     </Wrapper>
   );
 };

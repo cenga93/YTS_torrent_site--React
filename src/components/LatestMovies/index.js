@@ -3,28 +3,13 @@ import { fetchData } from "../../api";
 import { Wrapper, Grid3 } from "..";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
 import "./LatestMovies.scss";
 
-/*
-  API ENDPOINT PARAMETER: [sort_by]
-  *-----------------------
-    * -> sort_by = title
-    * -> sort_by = year
-    * -> sort_by = rating
-    * -> sort_by = peers
-    * -> sort_by = seeds
-    * -> sort_by = download_count
-    * -> sort_by = like_count
-    * -> sort_by = date_added
-  *-------------------------
-*/
 const api = { sort: `like_count`, limit: 8 };
 const { sort, limit } = api;
 
 const LatMovies = ({ className }) => {
   const [latestMovies, setLatestMovies] = useState([]);
-
   useEffect(() => {
     const fetchlatestMovies = async () => {
       const { data } = await fetchData(sort, limit);

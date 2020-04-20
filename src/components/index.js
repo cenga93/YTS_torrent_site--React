@@ -4,6 +4,7 @@
 -----------------------------------
 */
 import LatestMovies from   "./LatestMovies";
+import MovieDetails from   "./MovieDetails";
 import SocialIcons  from   "./SocialIcons";
 import SearchField  from   "./SearchField";
 import BrowseMovie  from   "./BrowseMovie";
@@ -24,6 +25,7 @@ import Home         from   "./Home";
 -----------------------------------
 */
 export {
+    MovieDetails,
     LatestMovies,
     SearchField,
     BrowseMovie,

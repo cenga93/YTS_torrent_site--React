@@ -4,32 +4,32 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./movie.scss";
+
 const cover = {
   fullHD: `https://yts.mx/assets/images/website/banner1080p.png`,
   hd: `https://yts.mx/assets/images/website/banner720p.png`,
 };
 
 const Movie = ({ movie }) => {
-  const checkQuality = (movie) => {
-    let array = [];
-    for (let i = 0; i < movie.torrents.length; i++) {
-      array.push(movie.torrents[i].quality);
-    }
-    if (array.includes("1080p")) {
-      return <img src={cover.fullHD} alt="1080p" />;
-    } else if (array.includes("720p")) {
-      return <img src={cover.hd} alt="1080p" />;
-    }
+  const qualityImages = (movie) => {
+    let has1080p;
+    movie.torrents.map((item) => {
+      if (item.quality === "1080p") {
+        return (has1080p = true);
+      } else {
+        return (has1080p = false);
+      }
+    });
+    return <img src={has1080p ? cover.fullHD : cover.hd} alt="quality_image" />;
   };
 
   return (
     <>
-      <Link className="movie_link" to={`movie/${movie.slug}`}>
+      <Link className="movie_link" to={`MovieDetails/${movie.imdb_code}`}>
         <Card className="m-0 cardOld">
-          {movie.medium_cover_image ? <Card.Img variant="top" src={movie.medium_cover_image} /> : <h1>Nema slike</h1>}
-
+          <Card.Img variant="top" src={movie.medium_cover_image} />
           <div className="overlay">
-            {checkQuality(movie)}
+            {qualityImages(movie)}
             <div className="central">
               <FontAwesomeIcon icon={faStar} size="lg" className="starIcon" />
               <p className="mt-1">{movie.rating} / 10</p>
@@ -38,7 +38,6 @@ const Movie = ({ movie }) => {
                 <p>{movie.genres[1]}</p>
               </div>
             </div>
-
             <div className="text-center">
               <button className="btn btn_movie">View Details</button>
             </div>
