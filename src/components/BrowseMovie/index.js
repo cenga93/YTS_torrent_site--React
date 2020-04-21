@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Col, Row } from "react-bootstrap";
 import { Pagin, MainSearch, Wrapper, Grid3 } from "..";
-import { fetchAllData } from "../../api";
-import "./BrowseMovie.scss";
 import { searchFetch } from "../../api";
+import { Col, Row } from "react-bootstrap";
+import "./BrowseMovie.scss";
+
 class BrowseMovie extends Component {
   constructor(props) {
     super(props);
@@ -15,30 +15,29 @@ class BrowseMovie extends Component {
       search_field: "",
       quality: "",
       genre: "",
-      rating: "",
+      rating: 0,
       order_by: "",
     };
   }
 
   async componentDidMount() {
-    const { data } = await fetchAllData(this.state.currentPage);
-    this.setState({
-      allMovies: [...data.movies],
-      totalPages: Math.ceil(data.movie_count / 20),
-      movieCount: data.movie_count,
-    });
+    this.fetchData();
   }
 
-  searching = async (event) => {
-    event.preventDefault();
+  fetchData = async () => {
     const { search_field, quality, genre, rating, order_by, currentPage } = this.state;
     const { data } = await searchFetch(search_field, quality, genre, rating, order_by, currentPage);
     this.setState({
-      allMovies: data.movie_count > 0 ? [...data.movies] : null,
+      allMovies: data.movie_count > 0 ? [...data.movies] : 0,
       movieCount: data.movie_count,
       totalPages: Math.ceil(data.movie_count / 20),
-      currentPage: 1,
     });
+  };
+
+  searching = async (event) => {
+    event.preventDefault();
+    this.fetchData();
+    this.setState({ currentPage: 1 });
   };
 
   handleInput = (e) => {
@@ -60,8 +59,8 @@ class BrowseMovie extends Component {
       <>
         <MainSearch className={`main_search`} search={(event) => this.searching(event)} handleInput={this.handleInput} search_field={this.state.search_field} />
         <Wrapper className="all_Movies pt-4 shadow">
-          {!this.state.allMovies ? (
-            <h1>Nema filmovi</h1>
+          {this.state.allMovies === 0 ? (
+            <h1>Movie Not Found</h1>
           ) : (
             <>
               <Row>

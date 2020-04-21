@@ -10,7 +10,7 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <SocialIcons />
-      <Route path="/MovieDetails/:movieID" component={MovieDetails} />
+      <Route path="/movie/:movieID" component={MovieDetails} />
       <Route exact path="/browse-movies" component={BrowseMovie} />
       <Route exact path="/" component={Home} />
       <Footer className="footer pt-4 shadow" />

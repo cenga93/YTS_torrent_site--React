@@ -12,20 +12,18 @@ const cover = {
 
 const Movie = ({ movie }) => {
   const qualityImages = (movie) => {
-    let has1080p;
-    movie.torrents.map((item) => {
+    return movie.torrents.map((item, i) => {
       if (item.quality === "1080p") {
-        return (has1080p = true);
+        return <img src={cover.fullHD} alt="quality_image" key={i} />;
       } else {
-        return (has1080p = false);
+        return <img src={cover.hd} alt="quality_image" key={i} />;
       }
     });
-    return <img src={has1080p ? cover.fullHD : cover.hd} alt="quality_image" />;
   };
 
   return (
     <>
-      <Link className="movie_link" to={`MovieDetails/${movie.imdb_code}`}>
+      <Link className="movie_link" to={`movie/${movie.id}`}>
         <Card className="m-0 cardOld">
           <Card.Img variant="top" src={movie.medium_cover_image} />
           <div className="overlay">

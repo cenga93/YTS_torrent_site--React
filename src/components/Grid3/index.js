@@ -4,9 +4,9 @@ import { Movie } from "..";
 
 const Grid3 = ({ movie }) => {
   const card = (movie) => {
-    return movie.map((item, index) => {
+    return movie.map((item, i) => {
       return (
-        <Col lg={3} md={3} sm={6} className="hoverCard p-4" key={index}>
+        <Col lg={3} md={3} sm={6} className="hoverCard p-4" key={i}>
           <Movie movie={item} />
         </Col>
       );

@@ -42,7 +42,6 @@ const Pagin = ({ currentPage, totalPages, nextPage }) => {
             {i}
           </Pagination.Item>
         );
-        console.log(items);
       }
     } else {
       if (currentPage < range) {
@@ -64,7 +63,6 @@ const Pagin = ({ currentPage, totalPages, nextPage }) => {
       }
     }
   }
-
   return (
     <Pagination>
       {currentPage !== 1 ? (

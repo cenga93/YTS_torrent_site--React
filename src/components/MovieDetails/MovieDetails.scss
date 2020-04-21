@@ -1,0 +1,5 @@
+$image: url("../../assets/img/background.jpg");
+.movie_details {
+  min-height: 100vh;
+  background: linear-gradient(180deg, rgba(29, 29, 29, 0.6) 0%, rgb(29, 29, 29) 100%, rgba(29, 29, 29, 0.61) 100%), $image no-repeat center/cover;
+}

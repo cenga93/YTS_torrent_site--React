@@ -30,25 +30,9 @@ const fetchData = async (sort, limit) => {
   }
 };
 
-const fetchAllData = async (page) => {
-  try {
-    let url = `${API_URL}?&page=${page}`;
-    const data = await fetch(url)
-      .then((response) => response.json())
-      .then((response) => {
-        return response;
-      });
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 const searchFetch = async (search_field, quality, genre, rating, order_by, pageNumber) => {
-  console.log(search_field, quality, genre, rating, order_by, pageNumber);
   try {
     let url = `${API_URL}?query_term=${search_field}&quality=${quality}&minimum_rating=${rating}&genre=${genre}&sort_by=${order_by}&page=${pageNumber}`;
-    console.log(url);
     const data = await fetch(url)
       .then((response) => response.json())
       .then((response) => {
@@ -61,4 +45,4 @@ const searchFetch = async (search_field, quality, genre, rating, order_by, pageN
 };
 
 /* EXPORTING */
-export { fetchData, fetchAllData, searchFetch };
+export { fetchData, searchFetch };
